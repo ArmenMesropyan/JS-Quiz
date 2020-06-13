@@ -1,220 +1,65 @@
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 21px;
+    color: #fff;
+    overflow-x: hidden;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #285e7b;
+    background: #171616;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .visually-hidden {
     position: absolute;
-    clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
-.forecast {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/* Navigation */
-
-.logo__text {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 40px;
-    font-weight: 300;
-}
-
-.logo__text::before {
-    content: '';
-    background: url('../img/logo-icon-1.svg') center center no-repeat;
-    display: inline-block;
-    width: 60px;
-    height: 65px;
-    background-size: 100%;
+.questions {
     position: absolute;
-    left: -80px;
-    animation-name: logoImages;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-@keyframes logoImages {
-    0% {
-        background: url('../img/logo-icon-1.svg') center center no-repeat;
-        background-size: 100%;
-    }
-    10% {
-        background-size: 0%;
-    }
-    25% {
-        background: url('../img/logo-icon-2.svg') center center no-repeat;
-        background-size: 100%;
-    }
-    40% {
-        background-size: 0%;
-    }
-    75% {
-        background: url('../img/logo-icon-3.svg') center center no-repeat;
-        background-size: 100%;
-    }
-    85% {
-        background-size: 0%;
-    }
-    100% {
-        background: url('../img/logo-icon-1.svg') center center no-repeat;
-        background-size: 100%;
-    }
-}
-
-
-/* Form */
-
-.forecast__form {
-    margin-top: 50px;
-}
-
-.forecast-form__search:focus~.icon .fa-check {
-    color: #2b8c89;
-}
-
-.forecast-form__search:focus~.icon .fa-times {
-    color: #d63636;
-}
-
-
-/* Forecast Data */
-
-.forecast__data {
-    margin-top: 50px;
-    width: 350px;
-    border-radius: 25px;
-}
-
-.forecast-data .card-content {
+.question__choices,
+.question__list {
     padding: 0;
-    padding-bottom: 1.5rem;
-}
-
-.forecast-data__basic {
-    padding: 0;
-    padding-bottom: 1.5rem;
-}
-
-.card-content~.forecast-data__basic {
-    display: none;
-}
-
-.card-content::before {
-    content: '';
-    background: url('../img/flag.png')
-}
-
-.forecast-data__item {
-    text-align: center;
-}
-
-.country-info {
-    display: flex;
-    align-items: center;
-    background-color: rgb(62, 118, 148);
-    color: #fff;
-    border-radius: 15px;
-    padding-left: 15px;
-}
-
-.country-info__name {
-    font-size: 25px;
-    font-weight: 300;
-}
-
-.weather-info ul {
     margin: 0;
+    border: none;
     list-style: none;
 }
 
-.weather-info__main {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-left: 45px;
-}
-
-.weather-info__img {
-    margin-right: 20px;
-}
-
-
-/* Slider */
-
-.forecast .tns-nav {
-    display: none;
-}
-
-.forecast .tns-controls {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-}
-
-.forecast .tns-controls:focus {
-    outline: none;
-    border: 1px solid #000;
-    border-radius: 10px 10px 20px 20px;
-}
-
-.forecast .tns-controls button:first-child,
-.forecast .tns-controls button:last-child {
-    font-size: 0;
-    border: none;
-    background: none;
-    background: url(../img/arrow.svg) center center no-repeat;
-    width: 30px;
-    height: 25px;
-}
-
-.forecast .tns-controls button:first-child:focus,
-.forecast .tns-controls button:last-child:focus {
-    outline: none;
-}
-
-.forecast .tns-controls button:first-child {
-    transform: rotate(90deg);
-}
-
-.forecast .tns-controls button:last-child {
-    transform: rotate(-90deg);
-}
-
-
-/* Media queries */
-
-@media screen and (max-width: 450px) {
-    .forecast-form__search {
-        padding: 0 1rem 0 2.5rem;
-    }
-    .logo__text::before {
-        left: -65px;
-    }
-    .forecast__data {
-        width: 300px;
-    }
+.question__js {
+    padding: 50px;
+    border-radius: 30px;
 }

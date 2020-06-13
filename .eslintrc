@@ -17,6 +17,7 @@
     "no-param-reassign": "off",
     "linebreak-style": "off",
     "no-restricted-globals": "off",
-    "camelcase": "warn"
+    "camelcase": "warn",
+    "import/no-extraneous-dependencies": "off",
   }
 }
