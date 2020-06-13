@@ -9,7 +9,38 @@
 </head>
 
 <body>
-
+    <main class="questions">
+        <section class="questions__question question">
+            <div class="question__code">
+                <code>
+                    let obj = {
+                        "0": 1,
+                        0: 2
+                    };
+                
+                    alert( obj["0"] + obj[0] );
+                </code>
+            </div>
+            <fieldset id="choice" class="question__choices">
+                <label>
+                    <input type="radio" value="0" name="choice" class="question__choice">
+                    2
+                </label>
+                <label>
+                    <input type="radio" value="1" name="choice" class="question__choice">
+                    4
+                </label>
+                <label>
+                    <input type="radio" value="2" name="choice" class="question__choice">
+                    3
+                </label>
+                <label>
+                    <input type="radio" value="3" name="choice" class="question__choice">
+                    Error
+                </label>
+            </fieldset>
+        </section>
+    </main>
 </body>
 
 </html>
