@@ -4,12 +4,12 @@ class QuestionsData {
             {
                 question: '',
                 code: `
-                    let obj = {
-                        "0": 1,
-                        0: 2
-                    };
-                   
-                    alert( obj["0"] + obj[0] );
+let obj = {
+    "0": 1,
+    0: 2
+};
+
+alert( obj["0"] + obj[0] );
                 `,
                 answer: 1,
                 choices: [2, 4, 3, 'error'],
@@ -17,9 +17,8 @@ class QuestionsData {
         ];
     }
 
-    init() {
-        console.log(this.questions);
-        console.log('Questions Data');
+    init(count) {
+        return this.questions[count];
     }
 }
 

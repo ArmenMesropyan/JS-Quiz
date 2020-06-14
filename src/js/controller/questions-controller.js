@@ -1,11 +1,11 @@
 class QuestionsController {
-    constructor(api) {
-        this.api = api;
+    constructor(data) {
+        this.data = data;
     }
 
-    init() {
-        console.log('Questions Controller');
-        this.api.init();
+    init(count) {
+        const question = this.data.init(count);
+        return question;
     }
 }
 
