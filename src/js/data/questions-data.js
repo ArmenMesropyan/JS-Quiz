@@ -17,9 +17,10 @@ class QuestionsData {
         ];
     }
 
-    // init() {
-    //     console.log('Questions Data')
-    // }
+    init() {
+        console.log(this.questions);
+        console.log('Questions Data');
+    }
 }
 
 export default QuestionsData;
