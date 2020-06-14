@@ -12,9 +12,10 @@ class QuestionsView {
 
     static choiceTemplate(value, i) {
         return `
-            <li class="question__item">
+            <li class="question__item" tab-index="1">
                 <label>
                     <input type="radio" value="${i}" name="choice" class="question__choice">
+                    <span class="question__styles"></span>
                     ${value}
                 </label>
             </li>
@@ -43,18 +44,17 @@ class QuestionsView {
     checkValue(value) {
         const isTrueAnswer = String(this.question.answer) === value;
         if (!isTrueAnswer) this.mistakes.push(this.question);
-        console.log(this.mistakes);
     }
 
     init() {
         const question = this.controller.init(this.counter);
+        this.clearContainer();
         if (!question) {
             console.log(this.mistakes);
             return;
         }
         this.question = question;
 
-        this.clearContainer();
         this.initHTML(question);
         this.counter++;
     }
