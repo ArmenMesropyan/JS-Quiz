@@ -51,6 +51,10 @@ img {
     transform: translate(-50%, -50%);
 }
 
+.question__title {
+    text-align: center;
+}
+
 .question__choices,
 .question__list {
     padding: 0;

@@ -5,8 +5,11 @@ const QuestionsView = Object.values(factory)[0];
 
 const nextBtn = document.getElementById('next');
 
+QuestionsView.init();
+
 nextBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const selected = document.querySelector('.question__choice:checked');
-    QuestionsView.init(selected.value);
+    QuestionsView.checkValue(selected.value);
+    QuestionsView.init();
 });

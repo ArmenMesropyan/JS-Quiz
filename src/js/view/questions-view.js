@@ -5,6 +5,9 @@ class QuestionsView {
 
         this.codeContainer = document.querySelector('.question__js');
         this.choiceContainer = document.querySelector('.question__list');
+        this.title = document.querySelector('.question__title');
+
+        this.mistakes = [];
     }
 
     static choiceTemplate(value, i) {
@@ -21,25 +24,38 @@ class QuestionsView {
     clearContainer() {
         this.codeContainer.innerHTML = '';
         this.choiceContainer.innerHTML = '';
+        this.title.innerHTML = '';
     }
 
-    init(value) {
-        const question = this.controller.init(this.counter);
-
-        this.clearContainer();
+    initHTML(question) {
+        this.title.innerHTML = question.question;
         this.codeContainer.innerHTML = question.code;
 
         // eslint-disable-next-line no-undef
-        hljs.initHighlighting();
+        hljs.highlightBlock(this.codeContainer);
 
         question.choices.forEach((choice, i) => {
             const html = QuestionsView.choiceTemplate(choice, i);
             this.choiceContainer.insertAdjacentHTML('beforeend', html);
         });
+    }
 
-        const isTrueAnswer = String(question.answer) === value;
-        console.log('isTrueAnswer: ', isTrueAnswer);
+    checkValue(value) {
+        const isTrueAnswer = String(this.question.answer) === value;
+        if (!isTrueAnswer) this.mistakes.push(this.question);
+        console.log(this.mistakes);
+    }
 
+    init() {
+        const question = this.controller.init(this.counter);
+        if (!question) {
+            console.log(this.mistakes);
+            return;
+        }
+        this.question = question;
+
+        this.clearContainer();
+        this.initHTML(question);
         this.counter++;
     }
 }
