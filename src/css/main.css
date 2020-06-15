@@ -202,8 +202,19 @@ img {
     min-height: 100vh;
 }
 
+.mistakes__section {
+    display: none;
+}
+
 .mistakes__title {
     text-align: center;
+    margin: 30px 0 60px 0;
+}
+
+.mistakes__question {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
 }
 
 .mistakes__list {
@@ -220,12 +231,13 @@ img {
     margin: 0 10px;
     position: relative;
     cursor: pointer;
+    min-height: 210px;
 }
 
 .mistakes__answers {
     position: absolute;
     font-size: 0;
-    top: 37px;
+    top: 58px;
     width: 100%;
     height: 0;
     text-align: center;
@@ -243,7 +255,7 @@ img {
 .mistakes__item:hover .mistakes__answers {
     opacity: 1;
     font-size: 20px;
-    height: 67%;
+    height: 64%;
     transition: 0.5s;
     background: rgba(45, 177, 98, 0.9);
 }

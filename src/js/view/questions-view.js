@@ -45,6 +45,7 @@ class QuestionsView {
 
     checkValue(value) {
         const isTrueAnswer = String(this.question.answer) === value;
+        this.question.wrong = value;
         if (!isTrueAnswer) this.mistakes.push(this.question);
     }
 
@@ -53,7 +54,7 @@ class QuestionsView {
         this.clearContainer();
         if (!question) {
             document.querySelector('.question').innerHTML = '';
-            mistakesView.init(this.mistakes);
+            mistakesView.init(this.mistakes, this.counter);
             return;
         }
         this.question = question;
