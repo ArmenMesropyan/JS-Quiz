@@ -121,7 +121,7 @@ img {
     top: 10px;
     border-radius: 50%;
     animation-name: radioAnim;
-    animation-duration: 2s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }

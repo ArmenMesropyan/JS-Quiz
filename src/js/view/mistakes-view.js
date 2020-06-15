@@ -51,7 +51,6 @@ class MistakesView {
     static mistakeResultTemplate(wrongCount, questionsCount) {
         const correctCount = questionsCount - wrongCount;
         const percent = (correctCount * 100) / questionsCount;
-        console.log(percent);
         return `
             ${correctCount}/${questionsCount} correct answers, ${Math.round(percent)}% result!
         `;
