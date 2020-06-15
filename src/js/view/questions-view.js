@@ -1,3 +1,5 @@
+import mistakesView from './mistakes-view';
+
 class QuestionsView {
     constructor(controller) {
         this.controller = controller;
@@ -50,7 +52,8 @@ class QuestionsView {
         const question = this.controller.init(this.counter);
         this.clearContainer();
         if (!question) {
-            console.log(this.mistakes);
+            document.querySelector('.question').innerHTML = '';
+            mistakesView.init(this.mistakes);
             return;
         }
         this.question = question;
