@@ -254,16 +254,17 @@ img {
 
 .mistakes__item:hover .mistakes__answers {
     opacity: 1;
-    font-size: 20px;
-    height: 64%;
+    font-size: 18px;
+    height: 250px;
     transition: 0.5s;
-    background: rgba(45, 177, 98, 0.9);
+    background: rgba(10, 10, 10, 0.9);
 }
 
 .mistakes__js {
     border: 2px solid #848283;
     position: relative;
     border-radius: 10px;
+    min-height: 250px;
 }
 
 .mistakes__js::before {
@@ -285,7 +286,8 @@ img {
 }
 
 .mistakes__wrong {
-    color: #790c0c;
+    color: #b50c0c;
+    margin-bottom: 20px;
 }
 
 .mistakes__correct {
