@@ -1,12 +1,10 @@
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: inherit;
     box-sizing: inherit;
 }
 
 html {
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -120,21 +118,36 @@ img {
     left: 10px;
     top: 10px;
     border-radius: 50%;
-    animation-name: radioAnim;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
-    animation-play-state: paused;
+    -webkit-animation-name: radioAnim;
+            animation-name: radioAnim;
+    -webkit-animation-duration: .5s;
+            animation-duration: .5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
 }
 
 .question__choice:checked~.question__styles {
     background: #712727;
     transition: 0.5s;
-    animation-play-state: running;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
 }
 
 .question__choice:checked~.question__styles::before {
-    animation-play-state: running;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
     display: inline-block;
+}
+
+@-webkit-keyframes radioAnim {
+    from {
+        background: #712727;
+    }
+    to {
+        background: #fff;
+    }
 }
 
 @keyframes radioAnim {
@@ -169,7 +182,7 @@ img {
 
 .question__button button::before {
     content: '';
-    background: url(../img/arrow.png);
+    background: url(img/arrow.png);
     background-size: 100%;
     width: 20px;
     height: 20px;
@@ -192,7 +205,7 @@ img {
 .question__button button:hover::before,
 .question__button button:focus::before,
 .question__button button:active::before {
-    background: url(../img/arrow-hover.png);
+    background: url(img/arrow-hover.png);
     background-size: 100%;
     transition: 0.5s;
 }
@@ -274,7 +287,7 @@ img {
     height: 25px;
     position: absolute;
     top: 2px;
-    background: url(../img/warning.svg) center center no-repeat;
+    background: url(img/warning.svg) center center no-repeat;
     background-size: 100%;
     right: 2px;
 }
@@ -303,7 +316,7 @@ img {
     display: block;
     width: 18px;
     height: 18px;
-    background: url(../img/down-arrow.svg);
+    background: url(img/down-arrow.svg);
     background-size: 100%;
     position: relative;
     left: calc(50% - 9px);

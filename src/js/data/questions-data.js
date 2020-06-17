@@ -102,7 +102,7 @@ console.log(true + false);
             {
                 question: 'What is the result of this expression?',
                 code: `
-[] + false - null + true
+[] + false + null + true
                 `,
                 answer: 0,
                 choices: ['"falsenulltrue"', 'NaN', 'error', 'NaNtrue'],
