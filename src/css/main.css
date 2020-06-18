@@ -309,6 +309,27 @@ img {
     margin: 10px 0;
 }
 
+.mistakes__win {
+    font-size: 30px;
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation-name: showWin;
+    animation-duration: 1.5s;
+}
+
+@keyframes showWin {
+    from {
+        color: #171616;
+    }
+    to {
+        color: #fff;
+    }
+}
+
 
 /* Media */
 

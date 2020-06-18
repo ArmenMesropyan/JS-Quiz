@@ -56,15 +56,30 @@ class MistakesView {
         `;
     }
 
+    showWinResult() {
+        this.container.insertAdjacentHTML('afterbegin', `
+            <li class="mistakes__win win-result">
+                <p class="win-result__text">
+                    Congratulations! Your result is 100%!
+                </p>
+            </li>
+        `);
+    }
+
     init(mistakes, questionsCount) {
         this.mistakes = mistakes;
 
         changeMainTagClass();
         showSection();
 
-        if (!this.mistakes.length) return;
+        if (!this.mistakes.length) {
+            this.showWinResult();
+            return;
+        }
 
         this.result.innerHTML = MistakesView.mistakeResultTemplate(mistakes.length, questionsCount);
+
+        if (!this.mistakes.length) this.showWinResult();
 
         this.mistakes.forEach((mistake) => {
             const html = MistakesView.mistakeHTMLTemplate(mistake);
