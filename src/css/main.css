@@ -20,7 +20,6 @@ body {
     line-height: 21px;
     color: #fff;
     overflow-x: hidden;
-    height: 100vh;
     background: #171616;
 }
 
@@ -55,6 +54,7 @@ img {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    height: 100%;
 }
 
 .question__title {
@@ -227,7 +227,6 @@ img {
 }
 
 .mistakes__item {
-    max-width: calc(33% - 20px);
     margin: 0 10px;
     position: relative;
     cursor: pointer;
@@ -308,4 +307,16 @@ img {
     position: relative;
     left: calc(50% - 9px);
     margin: 10px 0;
+}
+
+
+/* Media */
+
+@media only screen and (max-width: 400px) {
+    .question__js {
+        min-width: 300px;
+    }
+    .question__code {
+        width: 300px;
+    }
 }
